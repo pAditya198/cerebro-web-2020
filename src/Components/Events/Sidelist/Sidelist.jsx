@@ -1,19 +1,25 @@
 import React from "react";
 import "./Sidelist.scss";
 const Sidelist = props => {
-  const eventList = props.events.map((event, index) => {
+	const eventSort=props.events.map((event,index)=>{
+		return [event.event,index,event.pdf]
+	})
+	// console.log(eventSort)
+  const eventList = eventSort.sort().map((event, index) => {
+	  
     return (
       <li
-        key={index}
+        key={event[1]}
         className={`sidebarmenu__links__link ${
-          index === props.index ? "active" : ""
+          event[1]===props.index ? "active" : ""
         }`}
         onClick={() => {
-          return props.updateEvent(index,event.event,event.pdf);
+          return props.updateEvent(event[0],event[1],event[2]);
         }}
       >
-        <a>{event.event}</a>
-      </li>
+        <a>{event[0]}</a>
+	  </li>
+
     );
   });
   return (

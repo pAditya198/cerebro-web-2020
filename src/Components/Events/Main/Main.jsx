@@ -20,9 +20,10 @@ export class Main extends Component {
     });
   };
   render() {
-    const { open } = this.state;
+	const { open } = this.state;
     const eventList = this.props.events.map((event, index) => {
-      if (index == this.props.index) {
+		// console.log(event.event,this.props.events)
+      if (event.event == this.props.title) {
         return (
           <>
             <div className="main__container__content__left__description">
