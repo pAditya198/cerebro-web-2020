@@ -13,16 +13,16 @@ class Events extends Component {
     super(props);
 
     this.state = {
-      eventIndex: 0,
-      selectedEvent: "Tech Hunt",
-      pdf:"https://yashshah2820.pythonanywhere.com/media/pdf/Tech_Hunt.pdf"
+	  eventIndex:2,
+      selectedEvent: "Big Tech Quiz",
+      pdf:"https://github.com/cerebro-iiitv/cerebro-web-2020/files/4276026/Big.Tech.Quiz.pdf"
     };
   }
-  updateEvent = (index, event,pdf) => {
+  updateEvent = (event,index,pdf) => {
     this.setState({
-      eventIndex: index,
-      selectedEvent: event,
-      pdf:pdf
+		eventIndex:index,
+	  selectedEvent: event,
+	  pdf:pdf
     });
   };
 
